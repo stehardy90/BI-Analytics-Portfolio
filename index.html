@@ -13,83 +13,112 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            transition: background-color 0.5s ease;
             cursor: default;
         }
 
-        .title-section {
+        /* Full-width Banner */
+        .banner {
             width: 100%;
-            background-color: white;
-            height: 80px;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+            height: 70vh; /* 70% of the viewport height */
+            background: url('your-image-url.jpg') center/cover no-repeat; /* Replace with your image */
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
+            padding-left: 10%;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
         }
 
-        .typewriter {
-            display: flex;
-            flex-direction: column;
-            white-space: nowrap;
-            text-align: center;
+        .banner-text {
+            max-width: 600px;
         }
 
         .name {
-            font-size: 26px;
+            font-size: 48px;
             font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
         }
 
         .subtitle {
-            font-size: 18px;
+            font-size: 24px;
             opacity: 0;
-            transition: opacity 1s ease-in-out;
+            transition: opacity 1s ease-in;
         }
 
-        .logo {
-            height: 70px;
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
+        .container {
+            width: 95%;
+            max-width: 1600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 20px 0;
+            padding-top: 50px;
+        }
+
+        .box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .box.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <div class="title-section">
-        <img src="HDS_Logo.png" alt="HDS Logo" class="logo">
-        <div class="typewriter">
-            <div class="name" id="name"></div>
-            <div class="subtitle" id="subtitle">Data & Analytics Specialist</div>
+
+<!-- Banner Section -->
+<div class="banner">
+    <div class="banner-text">
+        <div class="name">
+            <span class="steven"></span> <span class="hardy"></span>
         </div>
+        <div class="subtitle">Data & Analytics Specialist</div>
     </div>
+</div>
 
-    <script>
-        const nameText = "Steven Hardy";
-        const nameElement = document.getElementById("name");
-        const subtitleElement = document.getElementById("subtitle");
-        let i = 0;
+<!-- Main Content -->
+<div class="container">
+    <div class="box paragraph">
+        Placeholder paragraph (100% width)<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </div>
+</div>
 
-        function typeEffect() {
-            if (i < nameText.length) {
-                nameElement.innerHTML += nameText.charAt(i);
-                i++;
-                setTimeout(typeEffect, 100);
-            } else {
-                setTimeout(() => {
-                    subtitleElement.style.opacity = "1";
-                }, 500);
-            }
+<script>
+    const textSteven = "Steven ";
+    const textHardy = "Hardy";
+    const stevenSpan = document.querySelector(".steven");
+    const hardySpan = document.querySelector(".hardy");
+    const subtitleElement = document.querySelector(".subtitle");
+
+    let i = 0;
+
+    function typeEffect() {
+        if (i < textSteven.length) {
+            stevenSpan.innerHTML += textSteven.charAt(i);
+        } else if (i < textSteven.length + textHardy.length) {
+            hardySpan.innerHTML += textHardy.charAt(i - textSteven.length);
+        } else {
+            setTimeout(() => {
+                subtitleElement.style.opacity = 1;
+            }, 500);
+            return;
         }
+        i++;
+        setTimeout(typeEffect, 100);
+    }
 
-        typeEffect();
-    </script>
+    typeEffect();
+</script>
+
 </body>
 </html>
