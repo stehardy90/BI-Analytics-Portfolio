@@ -20,14 +20,15 @@
         /* Full-width Banner with Background Image */
         .banner {
             width: 100%;
-            min-height: 70vh; /* Ensures proper scaling */
-            background: url('banner.png') center top/contain no-repeat; /* Ensures full image is visible */
+            height: 70vh; /* 70% of the viewport height */
+            background: url('image1.png') center top/cover no-repeat; /* Ensures full width and covers height */
             display: flex;
             align-items: center;
             justify-content: flex-start;
             padding-left: 10%;
             color: white;
             text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.6);
+            position: relative;
         }
 
         .banner-text {
@@ -47,6 +48,7 @@
             transition: opacity 1s ease-in;
         }
 
+        /* Ensure content below the banner is fully visible */
         .container {
             width: 95%;
             max-width: 1600px;
@@ -55,7 +57,10 @@
             align-items: center;
             gap: 30px;
             padding: 20px 0;
-            padding-top: 50px;
+            padding-top: 50px; /* Ensures content isn't hidden behind the banner */
+            position: relative;
+            z-index: 2;
+            background-color: #6ABDE3;
         }
 
         .box {
