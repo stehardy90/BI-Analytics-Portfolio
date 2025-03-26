@@ -18,20 +18,20 @@
         }
 
         /* Full-width Banner with Background Image */
-        .banner {
-            width: 100%;
-    min-height: 70vh;
-    height: auto;
-    padding: 80px 10% 80px 10%; /* top and bottom padding */
-            background: url('banner.jpg') center top/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding-left: 10%;
-            color: white;
-            text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
-            position: relative;
-        }
+.banner {
+    width: 100%;
+    min-height: 70vh;         /* Still gives it nice vertical presence */
+    box-sizing: border-box;   /* Ensures padding doesn't cause overflow */
+    padding: 80px 5%;         /* Responsive padding, won't cause overflow */
+    background: url('banner.jpg') center top/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
+    position: relative;
+    overflow-x: hidden;       /* Just in case something tries to escape */
+}
 
         .banner-text {
             max-width: 700px;
