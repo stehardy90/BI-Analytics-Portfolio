@@ -65,17 +65,14 @@
 
         /* Ensure content below the banner is fully visible */
         .container {
-            width: 95%;
-            max-width: 1600px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-            padding: 20px 0;
-            padding-top: 100px;
-            position: relative;
-            z-index: 2;
-            background-color: #6ABDE3;
+        width: 95%;
+        max-width: 1600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 20px 0;
+        padding-top: 80px; /* Offsets for the sticky header */
         }
 
         .box {
@@ -89,6 +86,82 @@
             transition: opacity 0.6s ease, transform 0.6s ease;
             width: 80%;
         }
+
+        .box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .row {
+            display: flex;
+            gap: 30px;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .row .box {
+            flex: 1;
+        }
+        
+        .row-2 .box {
+            width: 48%;
+        }
+        
+        .row-3 .box {
+            width: 38%;
+        }
+        
+        .image-gallery {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .image-gallery img {
+            width: 30%;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            margin-top: 15px;
+            margin-bottom: 35px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        .image-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .logo {
+            height: 70px; /* Increased logo size */
+            margin-left: 20px; /* Adds padding from the left side */
+            position: absolute;
+            left: 20px; /* Keeps it at the left side */
+            top: 50%;
+            transform: translateY(-50%); /* Centers it vertically */
+        }
+        
+        .box.paragraph {
+            margin-top: 30px; /* Adjust this value to increase/decrease the space */
+        }
+
+        
 
     </style>
 </head>
@@ -105,21 +178,31 @@
     </div>
 </div>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="box paragraph">
-        <h2>Welcome to My Portfolio</h2>
-        <p>
-            This is a placeholder paragraph. You should now see this text below the banner.
-            <br><br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Vestibulum in neque et nisl malesuada maximus. 
-            Duis id diam nec leo ultricies pharetra.
-            <br><br>
-            Let me know if you need any further adjustments!
-        </p>
+    <div class="container">
+        <div class="box paragraph">Placeholder paragraph (100% width)<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        
+        <div class="row row-2">
+            <div class="box">Rectangle (48%)<br><br>More placeholder text to allow scrolling... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            <div class="box">Rectangle (48%)<br><br>More placeholder text to allow scrolling... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        </div>
+
+        <div class="row row-3">
+            <div class="box">Rectangle (38%)<br><br>Additional content for scroll effect.</div>
+            <div class="box">Rectangle (38%)<br><br>Additional content for scroll effect. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            <div class="box">Rectangle (38%)<br><br>Additional content for scroll effect.</div>
+        </div>
+
+        <div class="row row-2">
+            <div class="box">Rectangle (48%)<br><br>Final content for scrolling effect. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            <div class="box">Rectangle (48%)<br><br>Final content for scrolling effect.</div>
+        </div>
     </div>
-</div>
+
+    <div class="image-gallery">
+        <img src="image1.jpg" alt="Project 1">
+        <img src="image2.jpg" alt="Project 2">
+        <img src="image3.jpg" alt="Project 3">
+    </div>
 
 <script>
     const textSteven = "Steven ";
