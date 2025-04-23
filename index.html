@@ -345,7 +345,7 @@
     const topLinks = document.querySelector('.top-links');
     
     window.addEventListener('scroll', () => {
-        if (topLinks.getBoundingClientRect().bottom < 50) { /* Change number to amend when banner appears */
+        if (topLinks.getBoundingClientRect().bottom < -50) { /* Change number to amend when banner appears */
             stickyNav.style.transform = 'translateY(0)';
         } else {
             stickyNav.style.transform = 'translateY(-100%)';
