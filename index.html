@@ -17,21 +17,25 @@
             cursor: default;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+        
         /* Full-width Banner with Background Image */
-.banner {
-    width: 100%;
-    min-height: 70vh;         /* Still gives it nice vertical presence */
-    box-sizing: border-box;   /* Ensures padding doesn't cause overflow */
-    padding: 80px 5%;         /* Responsive padding, won't cause overflow */
-    background: url('banner.jpg') center top/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    color: white;
-    text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
-    position: relative;
-    overflow-x: hidden;       /* Just in case something tries to escape */
-}
+        .banner {
+            width: 100%;
+            min-height: 70vh;         /* Still gives it nice vertical presence */
+            box-sizing: border-box;   /* Ensures padding doesn't cause overflow */
+            padding: 80px 5%;         /* Responsive padding, won't cause overflow */
+            background: url('banner.jpg') center top/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: white;
+            text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
+            position: relative;
+            overflow-x: hidden;       /* Just in case something tries to escape */
+        }
 
         .banner-text {
             max-width: 700px;
@@ -229,7 +233,8 @@
             width: 100%;
             max-width: 1600px;
             padding: 40px 5% 10px;
-            text-align: left;
+            text-align: center;
+            margin-bottom: 20px;
         }
         
         .section-header h2 {
@@ -243,6 +248,7 @@
             font-size: 18px;
             color: #8287A1;
             margin-top: 0;
+            margin-bottom: 0; /* Remove default extra spacing */
         }
 
     </style>
