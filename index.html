@@ -162,12 +162,80 @@
           color: #333; /* Optional: darker text on hover */
         }
 
+        .top-links {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+            max-width: 60%;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            z-index: 2;
+        }
         
+        .top-links a {
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(0,0,0,0.4);
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .top-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+        }        
+
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #007BFF;
+            color: white;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 12px 0;
+            z-index: 999;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .sticky-nav a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            transition: text-decoration 0.3s ease;
+        }
+        
+        .sticky-nav a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
 
     </style>
 </head>
 <body>
 
+<div class="top-links">
+    <a href="#data-modelling">Data Modelling</a>
+    <a href="#visualisation">Visualisation</a>
+    <a href="#analytics">Analytics</a>
+    <a href="#governance">Governance</a>
+</div>
+
+<div class="sticky-nav" id="sticky-nav">
+    <a href="#data-modelling">Data Modelling</a>
+    <a href="#visualisation">Visualisation</a>
+    <a href="#analytics">Analytics</a>
+    <a href="#governance">Governance</a>
+</div>
+    
 <!-- Banner Section -->
 <div class="banner">
     <div class="banner-text">
@@ -272,6 +340,19 @@
     }
 
     typeEffect();
+
+    const stickyNav = document.getElementById('sticky-nav');
+    const topLinks = document.querySelector('.top-links');
+    
+    window.addEventListener('scroll', () => {
+        if (topLinks.getBoundingClientRect().bottom < 0) {
+            stickyNav.style.transform = 'translateY(0)';
+        } else {
+            stickyNav.style.transform = 'translateY(-100%)';
+        }
+    });
+
+    
 </script>
 
 </body>
