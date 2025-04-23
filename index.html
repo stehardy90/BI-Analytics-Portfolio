@@ -88,15 +88,16 @@
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
         
-        .box.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.box.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
         
-        .box:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
-        }
+.box:hover {
+    cursor: pointer; /* Change cursor to hand */
+    border: 2px solid lightgray; /* Add light gray border */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Optional: Keep box shadow, or modify as needed */
+}
         
         .row {
             display: flex;
